@@ -2,7 +2,7 @@
 let img;
 
 function preload(){
-img = loadImage('https://p5js.org/assets/learn/learning-p5js.png');
+img = loadImage('sky.jpg');
 }
 
 

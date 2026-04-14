@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		  <meta charset="UTF-8">
+		    <title>Idealization</title>
+
+		      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<style>
+
+
+.right {
+    position: relative;
+}
+
+.temp {
+    display: flex;
+    flex-direction: row;          
+    align-items: flex-start;
+    gap: 20px;                  
+    width: 100%;
+}
+
+#canvas-wrapper {
+    position: relative;           
+    width: 70vw;                  
+    height: calc(80vh - 180px);                
+    flex-shrink: 0;               
+}
+
+.black {
+    width: 0vw;
+    height: 0vw;
+    background: #333;
+    margin: 30px auto;
+    opacity: 0.9;
+    flex: 1;                      
+}
+
+
+.slider{
+margin-top: 1rem;
+}
+
+
+
+</style>
+	</head><body>
+        <div class="main">
+
+                <!--copy to every page-->
+        <div class="tab">
+                <img class="logo" src="tifr-logo-black.png" alt="">
+
+<div class="steps">
+                                                                  
+	<div class="step">
+    <img src="sky.jpg">
+    <span>Reality</span>
+  </div>
+
+  <div class="step active">
+    <img src="2.jpg">
+    <span>Idealization</span>
+  </div>
+
+  <div class="step">
+        <img src="3.jpg">                               
+	<span>Discretisation</span>
+  </div>
+
+
+  <div class="step">
+    <img src="4.jpg">
+    <span>Geometry</span>
+  </div>
+
+  <div class="step">
+        <img src="5.jpg" alt="">                                       
+	<span>Algebra</span>
+  </div>
+
+</div>  </div>
+
+	<div class="container">
+
+		<div class="left">
+			
+			<div class="top">
+<p>Consider two large, parallel plates separated by a small gap.</p>
+<div id="qwert"><p><ul><li>We strip away details that are unnecessary for solving the problem.
+                </li></ul></p></div>               
+		<div id="qwer">
+
+<p>We assume ideal conditions:</p>
+
+<ul>
+  <li>Fluid completely fills the gap</li>
+  <li>Bottom plate fixed; top plate moves steadily</li>
+  <li>No-slip at both boundaries</li>
+  <li>Laminar, steady flow</li>
+</ul>
+		</div>
+<label for="slider">Drag the slider to view the process of idealization</label>
+<input type="range" min="0" max="1" step="0.01" value="0" class="slider" id="slider" >
+		</div>
+		</div>
+		<div class="right" id="right" >
+			<div class = "temp">
+			<div id="canvas-wrapper">
+			</div>
+			<script src="i2002.js"></script>
+<script src="i2003.js"></script>
+<script src="i2001.js"></script>
+<script src="ideal1left.js"></script>
+</div>
+			</div>
+</div>
+
+</div>
+</div>
+</body>
+</html>

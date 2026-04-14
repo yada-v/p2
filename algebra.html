@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		  <meta charset="UTF-8">
+		    <title>Algebra</title>
+
+		      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<link rel="stylesheet" href="style.css">
+<style>
+
+
+
+.right{
+position: relative;   
+height: calc(100vh - 180px);
+}
+                                                                                        
+    .canvas-wrapper{                                                                            
+	    position: relative;                                                                     
+	    width: 60vw;
+												
+	    height: calc(100vh - 180px);
+                                                             
+											}                                                                                                                                                                             
+    #graph , #label {                                                                           position: absolute;
+    top: 0;                                                                                 left: 0;                                                                                width: 100%;                                                                            height: 100%;                                                                       }                                                                                                                                                                               .black{
+        width:300px;
+        height:400px;                                                                           background:#333;                                                                        margin:30px auto;                                                                       opacity:0.9;
+
+}
+
+.left{
+        width: 40vw;
+	height: calc(100vh - 180px);
+
+}
+
+.right{ width: 50vw;}
+
+p{
+margin-top: 1rem;
+font-size: 1rem;
+}
+
+
+#graph{
+z-index: 1;
+}
+
+#label{
+z-index: 2;
+pointer-events: none;
+}
+
+
+
+/*from her*/
+.latexLabels{
+position: absolute;
+transform: translate(-50%, -50%);
+font-size: 1.2rem;
+margin-left: 70%;
+}
+
+
+
+
+</style>
+	</head><body>
+        <div class="main">
+
+                <!--copy to every page-->
+        <div class="tab">
+                <img class="logo" src="tifr-logo-black.png" alt="">
+
+<div class="steps">
+                                                                       
+	<div class="step">
+    <img src="sky.jpg">
+    <span>Reality</span>
+  </div>
+
+  <div class="step">
+    <img src="2.jpg">
+    <span>Idealization</span>
+  </div>
+
+  <div class="step">
+  	<img src="3.jpg">
+	<span>Discretisation</span>
+  </div>
+
+  <div class="step">
+    <img src="4.jpg">
+    <span>Geometry</span>
+  </div>
+
+  <div class="step active">
+        <img src="5.jpg" alt="">                                          
+	<span>Algebra</span>
+  </div>
+
+</div>  </div>
+
+	<div class="container">
+
+		<div class="left">
+
+<p>The drag force is given by $$F_d = \frac{1}{2} C_d A \rho v^2$$, where \(C_d\) is the drag coefficient, \(A\) is cross-sectional area, \(\rho\) is density of the medium, and \(v\) is velocity. The equation of motion is $$m \frac{dv}{dt} = mg - F_d$$. At terminal velocity, \(dv/dt = 0\), so \(mg = F_d\). Substituting the drag force and solving for \(v_t\) yields the terminal velocity: $$v_t = \sqrt{\frac{2mg}{C_d A \rho}}$$</p>
+<input type="range" id="slider" value="0" step="0.005" min="0" max="1" class="slider">			<button id="nextButton">Back to Start</button>
+		</div>
+		<div class="right" id="right" >
+			<div class="canvas-wrapper">
+				<div id="graph">
+	<script src="geom.js" defer></script>
+	<script src="a1.js"defer></script>
+
+</div>
+	
+			
+
+</div>
+
+
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+</body>
+</html>

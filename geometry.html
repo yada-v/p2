@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		  <meta charset="UTF-8">
+		    <title>Geometrization</title>
+
+		      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<link rel="stylesheet" href="style.css">
+<style>
+
+
+.right{
+position: relative;
+height: calc(100vh - 180px);
+}
+
+.canvas-wrapper{
+    position: relative;
+    width: 60vw;
+    height: calc(100vh - 180px);
+}
+
+#graph , #label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60vw;
+    
+    height: calc(100vh - 180px);
+}
+
+
+.left{
+	width: 40vw;
+	height: calc(100vh - 180px);
+
+}
+
+.right{ width: 60vw;}
+
+p{
+margin-top: 1rem;
+font-size: 1rem;
+}
+
+
+#graph{
+z-index: 1;
+}
+
+
+</style>
+	</head><body>
+        <div class="main">
+
+                <!--copy to every page-->
+        <div class="tab">
+                <img class="logo" src="tifr-logo-black.png" alt="">
+
+<div class="steps">
+                                                                        <div class="step">
+    <img src="sky.jpg">
+    <span>Reality</span>
+  </div>
+
+  <div class="step">
+    <img src="2.jpg">
+    <span>Idealization</span>
+  </div>
+
+  <div class="step">
+  	<img src="3.jpg">
+	<span>Discretisation</span>
+  </div>
+
+  <div class="step active">
+    <img src="4.jpg">
+    <span>Geometry</span>
+  </div>
+
+  <div class="step">
+        <img src="5.jpg" alt="">                                           <span>Algebra</span>
+  </div>
+
+</div>  </div>
+
+	<div class="container">
+
+		<div class="left">
+<p>The spacing between the dotted lines represents Δt, while the height represents the corresponding velocity
+
+$$v_{n+1} = v_n + \Delta t \cdot g \left(1 - \frac{v_n^2}{v_t^2}\right)$$
+. As Δt → 0 (i.e., Δt → dt), the graph approaches a smooth continuous curve.</p>
+<input type="range" id="slider" value="0" step="0.005" min="0" max="1" class="slider">
+<button id="nextButton">Continue</button>
+
+		</div>
+		<div class="right" id="right" >
+			<div class="canvas-wrapper">
+				<div id="graph">
+	<script src="geom.js" defer></script>
+	<script src="g1.js" defer></script>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

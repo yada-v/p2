@@ -15,7 +15,7 @@ position: relative;
 height: calc(100vh - 180px);
 }
 
-.canvas-wrapper{
+#canvas-wrapper{
     position: relative;
     width: 50vw;
     height: calc(100vh - 180px);
@@ -52,6 +52,7 @@ height: calc(100vh - 180px);
 
 p{
 margin-top: 15px;
+margin-bottom: 0;
 font-size: 1rem;
 }
 
@@ -114,47 +115,20 @@ margin-left: 70%;
 
 		<div class="left">
 
-<p>The motion of a falling object under gravity and air drag is described by:
-
-$$
-\frac{dv}{dt} = g - \frac{k}{m}v^2
-$$
-
-To simulate it numerically, we discretise time into small steps \(∆t\) and update the velocity as:
-
-$$
-v_{n+1} = v_n + \Delta t \left(g - \frac{k}{m}v_n^2\right)
-$$
-
-At terminal velocity, acceleration becomes zero:
-
-So the update can also be written as:
-
-$$
-v_{n+1} = v_n + \Delta t \cdot g \left(1 - \frac{v_n^2}{v_t^2}\right)
-$$
-
+<p>Spatial Discretization</p> 
+<p>Think of the fluid as many thin layers stacked on each other.
+Each layer drags the one next to it due to internal friction.
 </p>
+
 <input type="range" id="slider" value="0" step="0.005" min="0" max="1" class="slider">		
 	<button id="nextButton">Continue</button>
 
 		</div>
 		<div class="right" id="right" >
-			<div class="canvas-wrapper">
+			<div id="canvas-wrapper">
 				<div id="disc">
 	<script src="disc.js" defer></script>
 	<script src="d1.js"defer></script>
-
-</div>
-			<div id="label"> 
-			<div class="latexLabels" id="vn"> $$v_n$$</div>
-			<div class="latexLabels" id="vn1">$$v_{n+1}$$</div>
-			<div class="latexLabels" id="vn2">$$v_{n+2}$$</div>
-			<div class="latexLabels" id="vn3">$$v_{n+3}$$</div>
-			<div class="latexLabels" id="vn4">$$v_{n+4}$$</div>
-
-
-			
 
 </div>
 

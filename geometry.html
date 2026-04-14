@@ -16,7 +16,7 @@ position: relative;
 height: calc(100vh - 180px);
 }
 
-.canvas-wrapper{
+#canvas-wrapper{
     position: relative;
     width: 60vw;
     height: calc(100vh - 180px);
@@ -89,16 +89,30 @@ z-index: 1;
 	<div class="container">
 
 		<div class="left">
-<p>The spacing between the dotted lines represents Δt, while the height represents the corresponding velocity
+<p>Geometric Insight</p>
 
-$$v_{n+1} = v_n + \Delta t \cdot g \left(1 - \frac{v_n^2}{v_t^2}\right)$$
-. As Δt → 0 (i.e., Δt → dt), the graph approaches a smooth continuous curve.</p>
+<p>Velocity is not the same everywhere:</p>
+<ul>
+	<li>At the bottom: velocity = \(0\)</li>
+	<li>At the top: velocity = \(v\)</li>
+	<li>Between them: velocity increases smoothly</li>
+</ul>
+
+<p>
+So across distance \(h\) , velocity changes from \(0\) to \(h\).
+This creates a velocity gradient:
+
+$$\frac{dv}{dy} = \frac{v}{h}$$
+
+</p>
+
+
 <input type="range" id="slider" value="0" step="0.005" min="0" max="1" class="slider">
 <button id="nextButton">Continue</button>
 
 		</div>
 		<div class="right" id="right" >
-			<div class="canvas-wrapper">
+			<div id="canvas-wrapper">
 				<div id="graph">
 	<script src="geom.js" defer></script>
 	<script src="g1.js" defer></script>

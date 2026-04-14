@@ -1,149 +1,54 @@
-/// <reference types="p5/global" />
+/*
+let img;
 
-function setup(){
-let rightDiv = document.getElementById("disc");
-let canvas = createCanvas(rightDiv.clientWidth,rightDiv.clientHeight);
-canvas.parent("disc");
-
-positionLabels();
-
+function preload(){
+img = loadImage('sky.jpg');
 }
 
+*/
 
-function arrow(x1,y1,x2,y2) {
-	line(x1,y1,x2,y2);
+let t;
+function setup() {
+let rightDiv = document.getElementById("canvas-wrapper");
 
-	push();
-	let angle = atan2(y2 - y1,x2 - x1);
-
-	translate(x2,y2);
-	rotate(angle);
-	noStroke();
-	
-	let arrowSize = height/240;
-	triangle(0+height/360,0, -arrowSize, -arrowSize / 2, -arrowSize, arrowSize / 2);
-	pop();
-	
+  let canvas = createCanvas(rightDiv.clientWidth, rightDiv.clientHeight);
+  canvas.parent('canvas-wrapper');
 }
 
+function draw() {
+  background(50);
 
-function draw(){
-background(255);
+t = document.getElementById("slider");
+let  s = parseFloat(t.value);
 
-let a,b,c,d,e = 0;
-let slider = document.getElementById("slider");
-let t = parseFloat(slider.value);
-
-let labels = document.getElementById("label");
-labels.style.opacity = t;
-
-let nextButton = document.getElementById("nextButton");
-if (t>0.8) {
-	nextButton.style.opacity = 1;
-}else{
-	nextButton.style.opacity = 0;
-}
-
-
-
-let x = width/2; 
-let y = height/8;
-let r = height/15; 
-let offSet = 1.1*r;
-
-
-if ( t > 0 || t < 0.2) {
-	a = 5*t;
-} if(t>0.2){
-	a = 1;
-}
-
-
-if ( t > 0.2 || t < 0.4) {
-	b = 5*(t - 0.2);
-} if(t > 0.4){
-	b = 1;
-}
-
-
-if ( t > 0.4 || t < 0.6) {
-	c = 5*(t - 0.4);
-} if(t > 0.6){
-	c = 1;
-}
-
-
-if ( t > 0.6 || t < 0.8) {
-	d = 5*(t - 0.6);
-} if(t > 0.8){
-	d = 1;
-}
-
-
-if ( t > 0.8 || t < 1) {
-	e = 5*(t - 0.8);
-} if(t > 1){
-	e = 1;
-}
-
+	translate(width/6,height/2);
+	scale(1 + 7 * s);
+	translate(-width/6, -height/2)
 
 
 noStroke();
+/*rectangles*/
+fill(220);
+	rectMode(CENTER);
+	rect(width/2,height/2 - 29 ,width/1.5, 30);
+	
+	rectMode(CENTER);
+	rect(width/2,height/2 + 29,width/1.5, 30);
 
-fill(0,51*a);
-circle(x,2*y,r);
+	fill(200*(1-s));
+	rectMode(CENTER);
+	rect(width/2,height/2 ,width/1.5, 28);
+
+	for (let i = 0; i < 7; i++) {
+
+	rectMode(CENTER);
+		fill(255,218*s*(7-i)/7 + 36.42);
+		rect(width/2, height/2 + -29 + 17 + 4*i , width/1.5, 4);
+		
+	}
 
 
-
-fill(0,102*b);
-circle(x,3*y,r);
-
-
-
-fill(0,153*c);
-circle(x,4*y,r);
-
-
-
-fill(0,204*d);
-circle(x,5*y,r);
-
-
-
-fill(0,255*e);
-circle(x,6*y,r);
-
-//arrows
-
-stroke(0);
-strokeWeight(1);
-
-arrow(x ,3 * y - offSet ,x ,2 * y + offSet);	
-arrow(x ,4 * y - offSet ,x ,3 * y + offSet);	
-arrow(x ,5 * y - offSet ,x ,4 * y + offSet);	
-arrow(x ,6 * y - offSet ,x ,5 * y + offSet);	
-
+	
 
 
 }
-
-function positionLabels() {
-	let wrapper = select('.canvas-wrapper');
-	if(!wrapper || !wrapper.elt) return;
-
-	let w = wrapper.width;
-	let h = wrapper.height;
-
-
-	select('#vn').position(w * 0.05, h * 0.25);
-	select('#vn1').position(w * 0.05, h * 0.375);  
-	select('#vn2').position(w * 0.05, h * 0.5);   
-	select('#vn3').position(w * 0.05, h * 0.625);   
-	select('#vn4').position(w * 0.05, h * 0.75);
-
-}
-
-
-
-
-

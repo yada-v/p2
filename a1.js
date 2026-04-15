@@ -13,7 +13,7 @@ let slider = document.getElementById("slider");
 step2.style.opacity = 0;
 step3.style.opacity = 0;
 step4.style.opacity = 0;
-step5.style.opacity = 0;
+
 
 slider.addEventListener("input", function() {
   let t = parseFloat(slider.value);
@@ -21,5 +21,5 @@ slider.addEventListener("input", function() {
   step2.style.opacity = t > 0.25  ? 1 : 0;
   step3.style.opacity = t > 0.5   ? 1 : 0;
   step4.style.opacity = t > 0.75  ? 1 : 0;
-  step5.style.opacity = t > 0.9   ? 1 : 0;
+  
 });

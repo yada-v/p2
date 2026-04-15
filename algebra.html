@@ -125,6 +125,34 @@
         height: 60px;
       }
     }
+
+/* Prevent horizontal overflow in left column */
+.left {
+  width: 55%;
+  max-width: 55%;
+  overflow-x: hidden;          /* No scrollbar on the column itself */
+  word-wrap: break-word;
+}
+
+/* All content inside left column stays within bounds */
+.left * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* MathJax containers scroll internally if needed */
+mjx-container {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+/* Derivative step blocks also allow internal scroll */
+.deriv-step {
+  overflow-x: auto;
+  max-width: 100%;
+}
   </style>
 </head>
 <body>

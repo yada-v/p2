@@ -8,3 +8,4 @@ btn.style.opacity = parseFloat(s.value);
  s.addEventListener("input", function () {
    btn.style.opacity = parseFloat(s.value);
     });
+

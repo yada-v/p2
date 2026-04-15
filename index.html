@@ -1,120 +1,95 @@
 <!DOCTYPE html>
-<html>
-	<head><title>Why Raindrops Don't Hurt</title>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
-  
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"> 
-<style>
-.right img{
-
-  border-radius: 5%;                                       
-  border: 4px solid #999;
-}
-
-.images_y{
-display: flex;
-flex-direction: column;
-gap:10px;
-
-}
-
-p{
-margin-top: 1rem;                                                                       font-size: 1rem;
-
-}
-
-.row{
-display:flex;
-gap:10px;
-justify-content: center;
-}
-
-.op{
-width: 28vw;
-height: auto;
-
-			}
-
-</style>
-	</head>
+  <title>Why Raindrops Don't Hurt</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .right {
+      flex-direction: column;
+      gap: 0;
+      padding: 30px 24px;
+      align-items: center;
+      justify-content: center;
+    }
+    .op {
+      width: 280px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #c5cde0;
+    }
+    .row { gap: 20px; }
+    #nextButton {
+      font-size: 1rem;
+      padding: 12px 28px;
+      margin-top: 0;
+    }
+  </style>
+</head>
 <body>
-	<div class="main">
+<div class="main">
 
-		<!--copy to every page-->
-	<div class="tab">
-		<img class="logo" src="tifr-logo-black.png" alt="">
-
-<div class="steps">
-
-  <div class="step active">
-    <img src="sky.jpg">
-    <span>Reality</span>
+  <!-- NAV -->
+  <div class="tab">
+    <img class="logo" src="tifr-logo-black.png" alt="TIFR">
+    <div class="steps">
+      <div class="step active">
+        <img src="sky.jpg"><span>Reality</span>
+      </div>
+      <div class="step">
+        <img src="2.jpg"><span>Idealization</span>
+      </div>
+      <div class="step">
+        <img src="3.jpg"><span>Discretisation</span>
+      </div>
+      <div class="step">
+        <img src="4.jpg"><span>Geometry</span>
+      </div>
+      <div class="step">
+        <img src="5.jpg"><span>Algebra</span>
+      </div>
+    </div>
   </div>
 
-  <div class="step">
-    <img src="2.jpg">
-    <span>Idealization</span>
+  <div class="container">
+
+    <!-- LEFT -->
+    <div class="left">
+      <h2>Reality Question</h2>
+      <p>
+        A mechanical engineer is designing a lubricated sliding system where two
+        plates move past each other with a thin fluid layer in between.
+      </p>
+      <p>
+        For a given lubricant and gap, <strong>how much force is required
+        to maintain a steady sliding speed?</strong>
+      </p>
+      <p>A mathematical model helps answer this.</p>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+      <div class="images_y">
+        <div class="row">
+          <img class="op" src="rain.jpg" alt="Rain">
+          <img class="op" src="sky.jpg" alt="Sky">
+        </div>
+        <button id="nextButton">
+          To answer this, let us build a mathematical model →
+        </button>
+      </div>
+    </div>
+
   </div>
-
-  <div class="step">
-        <img src="3.jpg">                                    
-	<span>Discretisation</span>
-  </div>
-
-
-  <div class="step">
-    <img src="4.jpg">
-    <span>Geometry</span>
-  </div>
-
-  <div class="step">
-  	<img src="5.jpg" alt="">
-	<span>Algebra</span>
-  </div>
-
-</div>	</div>
-
-
-
-	<div class="container">
-
-		<div class="left">
-			
-			<div class="top">
-<p>Reality Question</p>
-
-<p>A mechanical engineer is designing a lubricated sliding system where two plates move past each other with a thin fluid layer in between.
-</p>
-
-<p>For a given lubricant and gap, how much force is required to maintain a steady sliding speed?</p>
-
-<p>A mathematical model helps answer this.</p>
-
-
-			</div>
-			</div>
-			<div class="right" id="right" >
-				<div class="images_y">
-		<div class="row">
-			
-		<img class="op" src="rain.jpg">
-		<img class="op" src="sky.jpg">	
-			
-			</div>
-
-<button id="nextButton">To answer these questions, let us mathematically model these systems !</button>        
 </div>
-</div>
-</div>
-</div>
-	<script>
-			document.getElementById("nextButton").onclick = function(){
-				window.location.href = "ideal.html";}
-		</script>
 
+<script>
+  document.getElementById("nextButton").onclick = function () {
+    window.location.href = "ideal.html";
+  };
+</script>
 </body>
 </html>
+

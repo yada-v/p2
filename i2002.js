@@ -1,3 +1,4 @@
+/// <reference types="p5/global" />
 document.addEventListener("DOMContentLoaded", function () {
   let slider = document.getElementById("slider");
 
@@ -10,3 +11,4 @@ document.addEventListener("DOMContentLoaded", function () {
   update();
   slider.addEventListener("input", update);
 });
+

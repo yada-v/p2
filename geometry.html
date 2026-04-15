@@ -1,129 +1,77 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		  <meta charset="UTF-8">
-		    <title>Geometrization</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Geometry — Why Raindrops Don't Hurt</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .right { align-items: center; justify-content: center; }
+    #canvas-wrapper {
+      position: relative;
+      width: 60vw;
+      height: calc(100vh - 140px);
+    }
+    #graph {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+<div class="main">
 
-		      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-<link rel="stylesheet" href="style.css">
-<style>
-
-
-.right{
-position: relative;
-height: calc(100vh - 180px);
-}
-
-#canvas-wrapper{
-    position: relative;
-    width: 60vw;
-    height: calc(100vh - 180px);
-}
-
-#graph , #label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60vw;
-    
-    height: calc(100vh - 180px);
-}
-
-
-.left{
-	width: 40vw;
-	height: calc(100vh - 180px);
-
-}
-
-.right{ width: 60vw;}
-
-p{
-margin-top: 1rem;
-font-size: 1rem;
-}
-
-
-#graph{
-z-index: 1;
-}
-
-
-</style>
-	</head><body>
-        <div class="main">
-
-                <!--copy to every page-->
-        <div class="tab">
-                <img class="logo" src="tifr-logo-black.png" alt="">
-
-<div class="steps">
-                                                                        <div class="step">
-    <img src="sky.jpg">
-    <span>Reality</span>
+  <div class="tab">
+    <img class="logo" src="tifr-logo-black.png" alt="TIFR">
+    <div class="steps">
+      <div class="step done"><img src="sky.jpg"><span>Reality</span></div>
+      <div class="step done"><img src="2.jpg"><span>Idealization</span></div>
+      <div class="step done"><img src="3.jpg"><span>Discretisation</span></div>
+      <div class="step active"><img src="4.jpg"><span>Geometry</span></div>
+      <div class="step"><img src="5.jpg"><span>Algebra</span></div>
+    </div>
   </div>
 
-  <div class="step">
-    <img src="2.jpg">
-    <span>Idealization</span>
+  <div class="container">
+    <div class="left">
+      <h2>Geometric Insight</h2>
+      <p>Velocity is not the same everywhere in the gap:</p>
+      <ul>
+        <li>At the bottom plate: \(u = 0\)</li>
+        <li>At the top plate: \(u = U\)</li>
+        <li>In between: velocity increases <em>linearly</em></li>
+      </ul>
+      <p>
+        So across gap height \(h\), velocity changes from \(0\) to \(U\).
+        This produces a uniform <strong>velocity gradient</strong>:
+      </p>
+      <p style="text-align:center;">
+        \[ \frac{du}{dy} = \frac{U}{h} \]
+      </p>
+      <p>
+        This gradient is the key quantity — it tells us how rapidly layers
+        of fluid slide past one another, which is directly linked to the
+        internal friction force.
+      </p>
+
+      <label for="slider">Drag to explore the geometry</label>
+      <input type="range" id="slider" value="0" step="0.005" min="0" max="1" class="slider">
+      <button id="nextButton">Continue →</button>
+    </div>
+
+    <div class="right">
+      <div id="canvas-wrapper">
+        <div id="graph">
+          <script src="geom.js" defer></script>
+          <script src="g1.js" defer></script>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="step">
-  	<img src="3.jpg">
-	<span>Discretisation</span>
-  </div>
-
-  <div class="step active">
-    <img src="4.jpg">
-    <span>Geometry</span>
-  </div>
-
-  <div class="step">
-        <img src="5.jpg" alt="">                                           <span>Algebra</span>
-  </div>
-
-</div>  </div>
-
-	<div class="container">
-
-		<div class="left">
-<p>Geometric Insight</p>
-
-<p>Velocity is not the same everywhere:</p>
-<ul>
-	<li>At the bottom: velocity = \(0\)</li>
-	<li>At the top: velocity = \(v\)</li>
-	<li>Between them: velocity increases smoothly</li>
-</ul>
-
-<p>
-So across distance \(h\) , velocity changes from \(0\) to \(h\).
-This creates a velocity gradient:
-
-$$\frac{dv}{dy} = \frac{v}{h}$$
-
-</p>
-
-
-<input type="range" id="slider" value="0" step="0.005" min="0" max="1" class="slider">
-<button id="nextButton">Continue</button>
-
-		</div>
-		<div class="right" id="right" >
-			<div id="canvas-wrapper">
-				<div id="graph">
-	<script src="geom.js" defer></script>
-	<script src="g1.js" defer></script>
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 </body>
 </html>
+

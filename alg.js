@@ -1,3 +1,4 @@
+/// <reference types="p5/global" />
 /*
 let img;
 
@@ -49,3 +50,4 @@ fill(220);
 
 
 }
+

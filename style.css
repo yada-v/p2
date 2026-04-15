@@ -160,7 +160,7 @@ label {
 
 .slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
 
-#nextButton {
+#nextButton , #reset {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 22px;

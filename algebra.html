@@ -7,10 +7,14 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="stylesheet" href="style.css">
   <style>
-    .right { align-items: center; justify-content: center; }
+    .right { align-items: center; justify-content: center; 
+    width: 40vw;}
+    .left{
+width: 60vw;
+    }
     #canvas-wrapper {
       position: relative;
-      width: 60vw;
+      width: 40vw;
       height: calc(100vh - 140px);
     }
     #graph, #label {
@@ -86,26 +90,26 @@
       <h2>Algebraic Resolution</h2>
       <p>We now translate the geometry into equations.</p>
 
-      <div class="deriv-step">
-        <div class="step-label" id="1">Step 1 — Velocity gradient</div>
+      <div class="deriv-step" id="step1">
+        <div class="step-label" >Step 1 — Velocity gradient</div>
         \[ \frac{du}{dy} = \frac{U}{h} \]
       </div>
 
-      <div>
-        <div class="step-label" id="2">Step 2 — Newton's law of viscosity</div>
+      <div  id="step2">
+        <div class="step-label">Step 2 — Newton's law of viscosity</div>
         <p style="margin-top:4px;">Fluid resistance (shear stress) is proportional to the gradient:</p>
         \[ \tau = \eta \frac{du}{dy} \]
       </div>
 
-      <div>
-        <div class="step-label" id="3" >Step 3 — Substitute</div>
+      <div  id="step3">
+        <div class="step-label" >Step 3 — Substitute</div>
         \[ \tau = \eta \frac{U}{h} \]
       </div>
 
-      <div>
+      <div  id="step4">
         <div>Result — Required Force</div>
         \[ F = \tau A = \eta A \frac{U}{h} \]
-        <p style="font-size:0.8rem; color:#198754; margin-top:6px;">
+        <p id="step5" style="font-size:0.8rem; color:#198754; margin-top:6px;">
           Force grows with viscosity, plate area, and speed;<br>
           decreases as gap widens.
         </p>

@@ -28,21 +28,25 @@ function draw() {
 
 	noStroke();
 	/*rectangles*/
+
 	fill("#8A8F98");
 		rectMode(CENTER);
 		rect(width/2,height/2 - 29 ,width/1.5, 30);
 		
+
 		rectMode(CENTER);
 		rect(width/2,height/2 + 29,width/1.5, 30);
 
-		fill(255,248,220,225*(1-s));
+	
+	fill(255,248,220);
+		fill(200*(1-s));
 		rectMode(CENTER);
 		rect(width/2,height/2 ,width/1.5, 28);
 
 		for (let i = 0; i < 7; i++) {
 
 				rectMode(CENTER);
-					fill(255,248,220,218*s*(7-i)/7 + 36.42);
+					fill(255, 248, 220,218*s*(7-i)/7 + 36.42);
 					rect(width/2, height/2 + -29 + 17 + 4*i , width/1.5, 4);
 					
 				}

@@ -25,13 +25,16 @@ function draw() {
   image(img, width/2, height/2, width, height);
 
   fill(160, 165, 170, 255*s);
+stroke(0,255*s);
   rectMode(CENTER);
   rect(width/2, height/2 - 29, width/1.5, 30);
 
-  fill(255, 248, 220, 255*s);
-  rect(width/2, height/2 + 29, width/1.5, 30);
 
   fill(160, 165, 170, 255*s);
+  rect(width/2, height/2 + 29, width/1.5, 30);
+
+
+  fill(255, 248, 220, 255*s);
   rect(width/2, height/2, width/1.5, 28);
 }
 

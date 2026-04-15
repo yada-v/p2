@@ -2,44 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Algebra — Why Raindrops Don't Hurt</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="stylesheet" href="style.css">
   <style>
-    .container {
-      display: flex;
-      min-height: calc(100vh - 140px);
-      width: 100%;
-      overflow-x: hidden;
-    }
-    .left {
-      flex: 0 0 55%;
-      max-width: 55%;
-      min-height: calc(100vh - 140px);
-      background: #ffffff;
-      padding: 28px 24px 24px;
-      display: flex;
-      flex-direction: column;
-      border-right: 1px solid #dde3f0;
-      box-shadow: 2px 0 12px rgba(44,60,120,0.04);
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-    .right {
-      flex: 1;
-      background: #f4f6fb;
-      position: relative;
-      min-height: calc(100vh - 140px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+    .right { align-items: center; justify-content: center; 
+    width: 40vw;}
+    .left{
+width: 60vw;
     }
     #canvas-wrapper {
       position: relative;
-      width: 100%;
+      width: 40vw;
       height: calc(100vh - 140px);
     }
     #graph, #label {
@@ -49,12 +24,15 @@
     }
     #graph  { z-index: 1; }
     #label  { z-index: 2; pointer-events: none; }
+
     .latexLabels {
       position: absolute;
       transform: translate(-50%, -50%);
       font-size: 1.1rem;
       margin-left: 70%;
     }
+
+    /* derivation steps */
     .deriv-step {
       background: #f8f8ff;
       border-left: 3px solid #4A90E2;
@@ -62,8 +40,8 @@
       padding: 8px 14px;
       margin-top: 12px;
       font-size: 0.88rem;
-      overflow-x: auto;
     }
+
     .deriv-step .step-label {
       font-size: 0.72rem;
       font-weight: 600;
@@ -72,6 +50,8 @@
       text-transform: uppercase;
       margin-bottom: 4px;
     }
+
+    /* result box */
     .result-box {
       margin-top: 14px;
       background: #e9f9f0;
@@ -79,8 +59,8 @@
       border-radius: 8px;
       padding: 12px 16px;
       text-align: center;
-      overflow-x: auto;
     }
+
     .result-box .res-label {
       font-size: 0.72rem;
       font-weight: 600;
@@ -89,74 +69,11 @@
       letter-spacing: 0.06em;
       margin-bottom: 6px;
     }
-    mjx-container {
-      overflow-x: auto;
-      overflow-y: hidden;
-      max-width: 100%;
-    }
-    @media (max-width: 700px) {
-      .container {
-        flex-direction: column;
-      }
-      .left, .right {
-        flex: auto;
-        max-width: 100%;
-        min-height: auto;
-      }
-      .left {
-        border-right: none;
-        border-bottom: 1px solid #dde3f0;
-        padding: 20px 16px;
-      }
-      #canvas-wrapper {
-        height: 50vh !important;
-      }
-      .tab {
-        height: auto;
-        flex-wrap: wrap;
-        padding: 12px 16px;
-      }
-      .steps {
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-      .step img {
-        width: 60px;
-        height: 60px;
-      }
-    }
-
-/* Prevent horizontal overflow in left column */
-.left {
-  width: 55%;
-  max-width: 55%;
-  overflow-x: hidden;          /* No scrollbar on the column itself */
-  word-wrap: break-word;
-}
-
-/* All content inside left column stays within bounds */
-.left * {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-/* MathJax containers scroll internally if needed */
-mjx-container {
-  display: block;
-  overflow-x: auto;
-  overflow-y: hidden;
-  max-width: 100%;
-}
-
-/* Derivative step blocks also allow internal scroll */
-.deriv-step {
-  overflow-x: auto;
-  max-width: 100%;
-}
   </style>
 </head>
 <body>
 <div class="main">
+
   <div class="tab">
     <img class="logo" src="tifr-logo-black.png" alt="TIFR">
     <div class="steps">
@@ -167,21 +84,25 @@ mjx-container {
       <div class="step active"><img src="5.jpg"><span>Algebra</span></div>
     </div>
   </div>
+
   <div class="container">
     <div class="left">
       <h2>Algebraic Resolution</h2>
       <p>We now translate the geometry into equations.</p>
+
       <div class="deriv-step" id="step1">
-        <div class="step-label">Step 1 — Velocity gradient</div>
+        <div class="step-label" >Step 1 — Velocity gradient</div>
         \[ \frac{du}{dy} = \frac{U}{h} \]
       </div>
-      <div id="step2">
+
+      <div  id="step2">
         <div class="step-label">Step 2 — Newton's law of viscosity</div>
         <p style="margin-top:4px;">Fluid resistance (shear stress) is proportional to the gradient:</p>
-        \[ \tau = \eta \frac{du}{dy}  , \tau = \eta \frac{U}{h} \]
+        \[ \tau = \eta \frac{du}{dy} ,  \tau = \eta \frac{U}{h} \]
       </div>
-      
-      <div id="step3">
+
+
+      <div  id="step3">
         <div>Result — Required Force</div>
         \[ F = \tau A = \eta A \frac{U}{h} \]
         <p id="step4" style="font-size:0.8rem; color:#198754; margin-top:6px;">
@@ -189,10 +110,12 @@ mjx-container {
           decreases as gap widens.
         </p>
       </div>
+
       <label for="slider">Drag to animate the derivation</label>
       <input type="range" id="slider" value="0" step="0.005" min="0" max="1" class="slider">
       <button id="nextButton">↩ Back to Start</button>
     </div>
+
     <div class="right">
       <div id="canvas-wrapper">
         <div id="graph">

@@ -112,7 +112,7 @@ body {
 }
 
 p {
-  font-size: 0.93rem;
+  font-size: 0.0186*vw;
   line-height: 1.75;
   color: #3a3a50;
   margin-top: 10px;

@@ -5,33 +5,11 @@
   <title>Why Raindrops Don't Hurt</title>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .right {
-      flex-direction: column;
-      gap: 0;
-      padding: 30*0.125vw 24*0.125vw;
-      align-items: center;
-      justify-content: center;
-    }
-    .op {
-      width: 280*0.125vw;
-      height: 200*0.125vw;
-      object-fit: cover;
-      border-radius: 10*0.125vw;
-      border: 3*0.125vw solid #c5cde0;
-    }
-    .row { gap: 20*0.125vw; }
-    #nextButton {
-      font-size: 0.0186*vh;
-      padding: 12*0.125vw 28*0.125vw;
-      margin-top: 0;
-    }
-  </style>
 </head>
 <body>
 <div class="main">
 
-  <!-- NAV -->
+  <!-- NAVIGATION STEPS -->
   <div class="tab">
     <img class="logo" src="tifr-logo-black.png" alt="TIFR">
     <div class="steps">
@@ -55,29 +33,30 @@
 
   <div class="container">
 
-    <!-- LEFT -->
+    <!-- LEFT PANEL – EXPLANATION -->
     <div class="left">
       <h2>Reality Question</h2>
       <p>
-        A mechanical engineer is designing a lubricated sliding system where two
-        plates move past each other with a thin fluid layer in between.
+        Rain falls from clouds thousands of meters high, yet it never hits us
+        with dangerous force. Why?
       </p>
       <p>
-        For a given lubricant and gap, <strong>how much force is required
-        to maintain a steady sliding speed?</strong>
+        A raindrop reaches a maximum speed — its <strong>terminal velocity</strong> —
+        where gravity is balanced by air resistance. Can we predict that speed
+        using a mathematical model?
       </p>
-      <p>A mathematical model helps answer this.</p>
+      <p>Let’s build one step by step.</p>
     </div>
 
-    <!-- RIGHT -->
+    <!-- RIGHT PANEL – IMAGES + BUTTON -->
     <div class="right">
       <div class="images_y">
         <div class="row">
-          <img class="op" src="rain.webp" alt="Rain">
-          <img class="op" src="sky.webp" alt="Sky">
+          <img class="op" src="rain.webp" alt="Raindrop">
+          <img class="op" src="sky.webp" alt="Clouds">
         </div>
         <button id="nextButton">
-          To answer this, let us build a mathematical model →
+          Build the mathematical model →
         </button>
       </div>
     </div>
@@ -92,4 +71,3 @@
 </script>
 </body>
 </html>
-

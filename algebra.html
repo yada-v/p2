@@ -7,15 +7,18 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="stylesheet" href="style.css">
   <style>
-    .right { align-items: center; justify-content: center; 
-    width: 40vw;}
-    .left{
-width: 60vw;
+    .right {
+      align-items: center;
+      justify-content: center;
+      width: 40vw;
+    }
+    .left {
+      width: 60vw;
     }
     #canvas-wrapper {
       position: relative;
       width: 40vw;
-      height: calc(100vh - 140*0.125vw);
+      height: calc(100vh - calc(140 * 0.125vw));   /* fixed */
     }
     #graph, #label {
       position: absolute;
@@ -28,46 +31,44 @@ width: 60vw;
     .latexLabels {
       position: absolute;
       transform: translate(-50%, -50%);
-      font-size: 0.0186*vw;
+      font-size: calc(0.0186 * 100vw);   /* fixed */
       margin-left: 70%;
     }
 
-    /* derivation steps */
     .deriv-step {
       background: #f8f8ff;
-      border-left: 3*0.125vw solid #4A90E2;
-      border-radius: 0 6*0.125vw 6*0.125vw 0;
-      padding: 8*0.125vw 14*0.125vw;
-      margin-top: 12*0.125vw;
-      font-size: 0.0186*vw;
+      border-left: calc(3 * 0.125vw) solid #4A90E2;   /* fixed */
+      border-radius: 0 calc(6 * 0.125vw) calc(6 * 0.125vw) 0;
+      padding: calc(8 * 0.125vw) calc(14 * 0.125vw);
+      margin-top: calc(12 * 0.125vw);
+      font-size: calc(0.0186 * 100vw);   /* fixed */
     }
 
     .deriv-step .step-label {
-      font-size: 0.0186*vw;
+      font-size: calc(0.0186 * 100vw);   /* fixed */
       font-weight: 600;
       color: #4A90E2;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 4*0.125vw;
+      margin-bottom: calc(4 * 0.125vw);
     }
 
-    /* result box */
     .result-box {
-      margin-top: 14*0.125vw;
+      margin-top: calc(14 * 0.125vw);
       background: #e9f9f0;
-      border: 1.5*0.125vw solid #198754;
-      border-radius: 8*0.125vw;
-      padding: 12*0.125vw 16*0.125vw;
+      border: calc(1.5 * 0.125vw) solid #198754;
+      border-radius: calc(8 * 0.125vw);
+      padding: calc(12 * 0.125vw) calc(16 * 0.125vw);
       text-align: center;
     }
 
     .result-box .res-label {
-      font-size: 0.0186*vw;
+      font-size: calc(0.0186 * 100vw);
       font-weight: 600;
       color: #198754;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      margin-bottom: 6*0.125vw;
+      margin-bottom: calc(6 * 0.125vw);
     }
   </style>
 </head>
@@ -91,21 +92,20 @@ width: 60vw;
       <p>We now translate the geometry into equations.</p>
 
       <div class="deriv-step" id="step1">
-        <div class="step-label" >Step 1 — Velocity gradient</div>
+        <div class="step-label">Step 1 — Velocity gradient</div>
         \[ \frac{du}{dy} = \frac{U}{h} \]
       </div>
 
-      <div  id="step2">
+      <div id="step2">
         <div class="step-label">Step 2 — Newton's law of viscosity</div>
-        <p style="margin-top:4*0.125vw;">Fluid resistance (shear stress) is proportional to the gradient:</p>
+        <p style="margin-top: calc(4 * 0.125vw);">Fluid resistance (shear stress) is proportional to the gradient:</p>
         \[ \tau = \eta \frac{du}{dy} ,  \tau = \eta \frac{U}{h} \]
       </div>
 
-
-      <div  id="step3">
+      <div id="step3">
         <div>Result — Required Force</div>
         \[ F = \tau A = \eta A \frac{U}{h} \]
-        <p id="step4" style="font-size:0.8*2vw; color:#198754; margin-top:6*0.125vw;">
+        <p id="step4" style="font-size: calc(0.8 * 2vw); color:#198754; margin-top: calc(6 * 0.125vw);">
           Force grows with viscosity, plate area, and speed;<br>
           decreases as gap widens.
         </p>

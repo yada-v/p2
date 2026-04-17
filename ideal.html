@@ -11,12 +11,12 @@
       flex-direction: row;
       align-items: flex-start;
       justify-content: flex-start;
-      padding: 20*0.125vw;
-      gap: 20*0.125vw;
+      padding: calc(20 * 0.125vw);                    /* fixed */
+      gap: calc(20 * 0.125vw);                        /* fixed */
     }
     #canvas-wrapper {
       width: 50%;
-      height: calc(100vh - 180*0.125vw);
+      height: calc(100vh - calc(180 * 0.125vw));      /* fixed */
       flex-shrink: 0;
       display: flex;
       align-items: center;
@@ -24,11 +24,13 @@
     }
     .black {
       flex: 1;
-      max-width: 340*0.125vw;
+      max-width: calc(340 * 0.125vw);                 /* fixed */
       height: auto;
       align-self: center;
     }
-    .black p { font-size: 0.0186*vw; }
+    .black p {
+      font-size: calc(0.0186 * 100vw);                  /* fixed */
+    }
   </style>
 </head>
 <body>
@@ -46,7 +48,6 @@
   </div>
 
   <div class="container">
-
     <div class="left">
       <h2>Idealization</h2>
       <p>Consider two large, parallel plates separated by a small gap filled with fluid.</p>
@@ -70,7 +71,6 @@
     <div class="right">
       <div id="canvas-wrapper"></div>
     </div>
-
   </div>
 </div>
 
@@ -81,14 +81,12 @@
   window.addEventListener("load", () => {
     const s = document.getElementById("slider");
     const btn = document.getElementById("nextButton");
-    const box = document.getElementById("black");
     const qwert = document.getElementById("qwert");
     const qwer  = document.getElementById("qwer");
 
     function update() {
       const t = parseFloat(s.value);
       btn.style.opacity  = t;
-      box.style.opacity  = t >= 0.85 ? 1 : 0;
       qwert.style.opacity = t >= 0.33 ? 1 : 0;
       qwer.style.opacity  = t >= 0.66 ? 1 : 0;
     }

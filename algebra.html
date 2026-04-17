@@ -15,7 +15,7 @@ width: 60vw;
     #canvas-wrapper {
       position: relative;
       width: 40vw;
-      height: calc(100vh - 140px);
+      height: calc(100vh - 140*0.125vw);
     }
     #graph, #label {
       position: absolute;
@@ -35,10 +35,10 @@ width: 60vw;
     /* derivation steps */
     .deriv-step {
       background: #f8f8ff;
-      border-left: 3px solid #4A90E2;
-      border-radius: 0 6px 6px 0;
-      padding: 8px 14px;
-      margin-top: 12px;
+      border-left: 3*0.125vw solid #4A90E2;
+      border-radius: 0 6*0.125vw 6*0.125vw 0;
+      padding: 8*0.125vw 14*0.125vw;
+      margin-top: 12*0.125vw;
       font-size: 0.0186*vw;
     }
 
@@ -48,16 +48,16 @@ width: 60vw;
       color: #4A90E2;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 4px;
+      margin-bottom: 4*0.125vw;
     }
 
     /* result box */
     .result-box {
-      margin-top: 14px;
+      margin-top: 14*0.125vw;
       background: #e9f9f0;
-      border: 1.5px solid #198754;
-      border-radius: 8px;
-      padding: 12px 16px;
+      border: 1.5*0.125vw solid #198754;
+      border-radius: 8*0.125vw;
+      padding: 12*0.125vw 16*0.125vw;
       text-align: center;
     }
 
@@ -67,7 +67,7 @@ width: 60vw;
       color: #198754;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      margin-bottom: 6px;
+      margin-bottom: 6*0.125vw;
     }
   </style>
 </head>
@@ -77,11 +77,11 @@ width: 60vw;
   <div class="tab">
     <img class="logo" src="tifr-logo-black.png" alt="TIFR">
     <div class="steps">
-      <div class="step done"><img src="sky.jpg"><span>Reality</span></div>
-      <div class="step done"><img src="2.jpg"><span>Idealization</span></div>
-      <div class="step done"><img src="3.jpg"><span>Discretisation</span></div>
-      <div class="step done"><img src="4.jpg"><span>Geometry</span></div>
-      <div class="step active"><img src="5.jpg"><span>Algebra</span></div>
+      <div class="step done"><img src="sky.webp"><span>Reality</span></div>
+      <div class="step done"><img src="2.webp"><span>Idealization</span></div>
+      <div class="step done"><img src="3.webp"><span>Discretisation</span></div>
+      <div class="step done"><img src="4.webp"><span>Geometry</span></div>
+      <div class="step active"><img src="5.webp"><span>Algebra</span></div>
     </div>
   </div>
 
@@ -97,7 +97,7 @@ width: 60vw;
 
       <div  id="step2">
         <div class="step-label">Step 2 — Newton's law of viscosity</div>
-        <p style="margin-top:4px;">Fluid resistance (shear stress) is proportional to the gradient:</p>
+        <p style="margin-top:4*0.125vw;">Fluid resistance (shear stress) is proportional to the gradient:</p>
         \[ \tau = \eta \frac{du}{dy} ,  \tau = \eta \frac{U}{h} \]
       </div>
 
@@ -105,7 +105,7 @@ width: 60vw;
       <div  id="step3">
         <div>Result — Required Force</div>
         \[ F = \tau A = \eta A \frac{U}{h} \]
-        <p id="step4" style="font-size:0.8rem; color:#198754; margin-top:6px;">
+        <p id="step4" style="font-size:0.8*2vw; color:#198754; margin-top:6*0.125vw;">
           Force grows with viscosity, plate area, and speed;<br>
           decreases as gap widens.
         </p>

@@ -104,14 +104,14 @@ body {
 
 .container {
   display: flex;
-  min-height: calc(100vh - 17.5vw); /* main height minus tab height */
+  min-height: calc(100vh - 17.5vh); /* main height minus tab height */
   width: 100%;
 }
 
 /* ---------- LEFT PANEL (TEXT) ---------- */
 .left {
   width: 32%;
-  min-height: calc(100vh - 17.5vw);
+  min-height: calc(100vh - 17.5vh);
   background: #ffffff;
   padding: 3.5vw 3vw 3vw;        /* ≈ 28, 24, 24 * 0.125vw */
   display: flex;
@@ -230,7 +230,7 @@ label {
   flex: 1;
   background: #f4f6fb;
   position: relative;
-  min-height: calc(100vh - 17.5vw);
+  min-height: calc(100vh - 17.5vh);
   display: flex;
   align-items: center;
   justify-content: center;

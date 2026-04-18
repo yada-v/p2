@@ -31,7 +31,7 @@
     .latexLabels {
       position: absolute;
       transform: translate(-50%, -50%);
-      font-size: calc(0.00186 * 100vw);   /* fixed */
+      font-size: calc(0.00117 * 100vw);   /* fixed */
       margin-left: 70%;
     }
 
@@ -41,11 +41,11 @@
       border-radius: 0 calc(6 * 0.125vw) calc(6 * 0.125vw) 0;
       padding: calc(8 * 0.125vw) calc(14 * 0.125vw);
       margin-top: calc(12 * 0.125vw);
-      font-size: calc(0.0186 * 100vw);   /* fixed */
+      font-size: calc(0.00117 * 100vw);   /* fixed */
     }
 
     .deriv-step .step-label {
-      font-size: calc(0.0186 * 100vw);   /* fixed */
+      font-size: calc(0.117 * 100vw);   /* fixed */
       font-weight: 600;
       color: #4A90E2;
       letter-spacing: 0.06em;
@@ -63,12 +63,12 @@
     }
 
     .result-box .res-label {
-      font-size: calc(0.0186 * 100vw);
+      font-size: calc(0.0117 * 100vh);
       font-weight: 600;
       color: #198754;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      margin-bottom: calc(6 * 0.125vw);
+      margin-bottom: calc(6 * 0.625vh);
     }
   </style>
 </head>
@@ -98,14 +98,14 @@
 
       <div id="step2">
         <div class="step-label">Step 2 — Newton's law of viscosity</div>
-        <p style="margin-top: calc(4 * 0.125vw);">Fluid resistance (shear stress) is proportional to the gradient:</p>
+        <p style="margin-top: calc(4 * 0.625vh);">Fluid resistance (shear stress) is proportional to the gradient:</p>
      <p>  \[ \tau = \eta \frac{du}{dy} ,  \tau = \eta \frac{U}{h} \] </p>
       </div>
 
       <div id="step3">
         <div>Result — Required Force</div>
     <p>    \[ F = \tau A = \eta A \frac{U}{h} \] </p>
-        <p id="step4" style="font-size: calc(0.8 * 2vw); color:#198754; margin-top: calc(6 * 0.125vw);">
+        <p id="step4" style="font-size: calc(0.8 * 1.25vh); color:#198754; margin-top: calc(6 * 0.625vh);">
           Force grows with viscosity, plate area, and speed;decreases as gap widens.
         </p>
       </div>

@@ -1,7 +1,7 @@
 let img;
 
 function preload(){
-  img = loadImage('sky.jpg');
+  img = loadImage('sky.webp');
 }
 
 let t;

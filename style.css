@@ -122,11 +122,11 @@ body {
 }
 
 .left h2 {
-  font-size: 1.8vw;
+  font-size: 1.125vh;
   font-weight: 600;
   color: #1a1a2e;
-  margin-bottom: 1vw;
-  margin-top: 1.5vw;
+  margin-bottom: 0.625vh;
+  margin-top: 0.938vh;
 }
 
 p {
